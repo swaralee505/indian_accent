@@ -15,25 +15,9 @@ datasets:
     n_workers: 8 # idk what this does
     batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
-    path: /content/dataset
+    path: /content/drive/MyDrive/nptel-pure/corrected_txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
     phase: train
-    max_wav_length: 255995
-    max_text_length: 200
-    sample_rate: 22050
-    load_conditioning: True
-    num_conditioning_candidates: 2
-    conditioning_length: 44000
-    use_bpe_tokenizer: True
-    load_aligned_codes: False
-  val:
-    name: CHANGEME_validation_dataset_name
-    n_workers: 1
-    batch_size: 64 # this could be higher probably
-    mode: paired_voice_audio
-    path: CHANGEME_path_to_validation_dataset
-    fetcher_mode: ['lj']
-    phase: val # might be broken idk
     max_wav_length: 255995
     max_text_length: 200
     sample_rate: 22050
