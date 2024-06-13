@@ -15,7 +15,7 @@ datasets:
     n_workers: 8 # idk what this does
     batch_size: 1 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
-    path: /kaggle/input/transcript/transcript.txt
+    path: /content/drive/MyDrive/test/transcript.txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
     phase: train
     max_wav_length: 255995
