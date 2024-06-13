@@ -13,9 +13,9 @@ datasets:
   train:
     name: dataset
     n_workers: 8 # idk what this does
-    batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
+    batch_size: 1 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
-    path: /content/drive/MyDrive/nptel-pure/corrected_txt
+    path: /kaggle/input/transcript
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
     phase: train
     max_wav_length: 255995
