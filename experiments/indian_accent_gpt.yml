@@ -13,7 +13,7 @@ datasets:
   train:
     name: train_dataset
     n_workers: 1 # idk what this does
-    batch_size: 2 # This leads to ~16GB of vram usage on my 3090.
+    batch_size: 1 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
     path: /kaggle/input/dataset-wav/transcript.txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
