@@ -13,7 +13,7 @@ datasets:
   train:
     name: train_dataset
     n_workers: 8 # idk what this does
-    batch_size: 1 # This leads to ~16GB of vram usage on my 3090.
+    batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
     path: /content/drive/MyDrive/dataset/train.txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
@@ -107,7 +107,7 @@ path:
 
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
 train: # CHANGEME: ALL OF THESE PARAMETERS SHOULD BE EXPERIMENTED WITH
-  niter: 500
+  niter: 10
   warmup_iter: -1
   mega_batch_factor: 4    # <-- Gradient accumulation factor. If you are running OOM, increase this to [2,4,8].
   val_freq: 500 # TODO set this to epoch size * something
@@ -125,7 +125,7 @@ logger:
   print_freq: 100 # TODO: set this to epoch size
   save_checkpoint_freq: 500 # CHANGEME: especially you should increase this it's really slow
   visuals: [gen, mel] #TODO: figure this out
-  visual_debug_rate: 500
+  visual_debug_rate: 5000
   is_mel_spectrogram: true
   disable_state_saving: true # CHANGEME if you plan to halt training inbetween
 
