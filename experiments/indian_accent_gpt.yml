@@ -12,8 +12,8 @@ use_tb_logger: true
 datasets:
   train:
     name: train_dataset
-    n_workers: 8 # idk what this does
-    batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
+    n_workers: 1 # idk what this does
+    batch_size: 2 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
     path: /kaggle/input/dataset-wav/transcript.txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
